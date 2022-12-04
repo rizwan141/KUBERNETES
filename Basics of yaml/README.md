@@ -51,7 +51,7 @@ person: # Dictionary
 ```  
 
 
-## Sample Pod Tempalte for Reference
+## Sample Pod Template for Reference
 
 ```yml
 apiVersion: v1 # String
@@ -68,7 +68,7 @@ spec: # Dictionary
         - containerPort: 80
 ```        
 
-## Sample ReplicaSet Tempalte for Reference
+## Sample ReplicaSet Template for Reference
 
 ```yml
 apiVersion: v1
@@ -84,7 +84,7 @@ spec:
     metadata: # Dictionary
       name: demo-pod
       labels: # Dictionary
-        app: demoapp
+        app: demo-app
     spec: # Dictionary
       containers: # List
         - name: nginx
@@ -92,3 +92,46 @@ spec:
           ports:
             - containerPort: 80
 ```            
+
+## Sample Deployment Template for Reference
+
+```yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demoapp
+  template:
+    metadata:
+      name: demo-pod
+      labels:
+        app: demo-app 
+    spec: 
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80    
+```            
+
+## Sample Service Template for Reference
+
+```yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-service
+spec:
+  type: NodePort
+  selector:
+    app: demoapp
+  ports:
+    - name: http # service port name
+      port: 80 # service port
+      targetPort: 80 # container port
+      nodePort: 30000 # node port
+```      
