@@ -1,4 +1,4 @@
-# Basics of YAML
+# Basics of yaml
 
 ## Step-01: Comments & Key Value Pairs
 - Space after colon is mandatory to differentiate key and value
