@@ -1,6 +1,6 @@
 # Basics of yaml
 
-## Step-01: Comments & Key Value Pairs
+## 01: Comments & Key Value Pairs
 - Space after colon is mandatory to differentiate key and value
 ```yml
 # Defining simple key value pairs
@@ -9,8 +9,7 @@ age: 25
 city: Pune
 ```
 
-## Step-02: Dictionary / Map
-- Set of properties grouped together after an item
+## 02: Dictionary / Map
 - Equal amount of blank space required for all the items under a dictionary
 ```yml
 person:
