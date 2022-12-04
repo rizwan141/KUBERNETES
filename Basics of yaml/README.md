@@ -51,24 +51,44 @@ person: # Dictionary
 ```  
 
 
-## Step-05: Sample Pod Tempalte for Reference
+## Sample Pod Tempalte for Reference
+
 ```yml
 apiVersion: v1 # String
-kind: Pod  # String
+kind: Pod # String
 metadata: # Dictionary
   name: demo-app
-  labels: # Dictionary 
-    app: myapp         
-spec:
+  labels: # Dictionary
+    app: demo-app
+spec: # Dictionary
   containers: # List
-    - name: demo-app
+    - name: nginx
       image: nginx
       ports:
         - containerPort: 80
-          protocol: "TCP"
-        - containerPort: 81
-          protocol: "TCP"
-```
+```        
 
+## Sample ReplicaSet Tempalte for Reference
 
-
+```yml
+apiVersion: v1
+kind: ReplicaSet
+metadata:
+  name: demo-rs
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demoapp
+  template:
+    metadata: # Dictionary
+      name: demo-pod
+      labels: # Dictionary
+        app: demoapp
+    spec: # Dictionary
+      containers: # List
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+```            
