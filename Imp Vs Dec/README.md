@@ -8,12 +8,6 @@ kubectl run nginx --image=nginx
 ```
 kubectl run nginx --image=nginx --dry-run=client -o yaml
 ```
-##### NOTE : 
-
-a) ```--dry-run=client``` : This will not create the resource, instead, tell you whether the resource can be created and if your command is right. 
-
-b) ```-o yaml``` : This will output the resource definition in YAML format on screen.
-
 
 ## Deployment
 #### Create a deployment
@@ -67,9 +61,13 @@ kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run=cl
 ```
 (This will not use the pods labels as selectors)
 
-Both the above commands have their own challenges. While one of it cannot accept a selector the other cannot accept a node port. I would recommend going with the `kubectl expose` command. If you need to specify a node port, generate a definition file using the same command and manually input the nodeport before creating the service.
+Both the above commands have their own challenges. While one of it cannot accept a selector the other cannot accept a node port. we would recommend going with the `kubectl expose` command. If you need to specify a node port, generate a definition file using the same command and manually input the nodeport before creating the service.
 
 
+##### NOTE : 
 
+a) ```--dry-run=client``` : This will not create the resource, instead, tell you whether the resource can be created and if your command is right. 
+
+b) ```-o yaml``` : This will output the resource definition in YAML format on screen.
 
 
