@@ -53,7 +53,7 @@ kubectl create service clusterip redis --tcp=6379:6379 --dry-run=client -o yaml
 ```
 kubectl expose pod nginx --type=NodePort --port=80 --name=nginx-service --dry-run=client -o yaml
 ```
-(This will automatically use the pod’s labels as selectors, but you cannot specify the node port. You have to generate a definition file and then add the node port in manually before creating the service with the pod.)
+(This will automatically use the pod’s labels as selectors, <a href="https://github.com/kubernetes/kubernetes/issues/25478/">but you cannot specify the node port.</a> You have to generate a definition file and then add the node port in manually before creating the service with the pod.)
 
 Or
 ```
@@ -70,4 +70,6 @@ a) ```--dry-run=client``` : This will not create the resource, instead, tell you
 
 b) ```-o yaml``` : This will output the resource definition in YAML format on screen.
 
+
+## Documentation : <a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/">kubectl-commands</a>
 
