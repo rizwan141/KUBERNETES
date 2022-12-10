@@ -18,13 +18,15 @@
 * For the purposes of this tutorial, we will use two virtual machines running Ubuntu 20.04 LTS, one for the control-plane node and one for the worker node.
 * At least 2 GB of RAM for each instance; however, 4 GB is recommended to ensure that your test environment runs smoothly thats why will use t3.medium as instance type which having 2 vCPU and 4 Gib Memory
 
-#### 2. Disabling Swap Memory : We need to Disabled swap memory on each node; otherwise, ```kubeadm``` will not work correctly
+#### 2. Disabling Swap Memory : We need to Disabled swap memory on each node; otherwise, ```kubelet``` will not work correctly
 To ensure that the node does not use swap memory, run the following command:
 ```
 sudo swapoff -a && sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 ```
 #### 3. Setting Up Unique Hostnames For Controlplane & Workernodes
-As explained in the documentation, you need to ensure that each node in the cluster has a unique hostname, [otherwise initialization will fail](https://www.containiq.com/post/kubeadm#:~:text=otherwise%20initialization%20will%20fail). In this tutorial, the control-plane node will be called ```controlplane```, and the worker node ```worker```
+As explained in the documentation, you need to ensure that each node in the cluster has a unique hostname, <a href="https://github.com/kubernetes/kubeadm/issues/31/">otherwise initialization will fail</a> In this tutorial, the control-plane node will be called ```controlplane```, and the worker node ```worker```
+
+
 
 ##### In the control-plane node, use the following command to change the hostname:
 ```
@@ -105,7 +107,10 @@ The output should look similar to the image below.
 ![6207e6aecfdf23a19cfa8759_gDzhpEV](https://user-images.githubusercontent.com/103893307/205305344-fd2121c1-9d83-4033-b84e-c0b548b8bd69.png)
 
 #### 5. Configuring Cgroup Driver
-For the ```kubelet``` process to work correctly, its [cgroup driver](https://www.containiq.com/post/kubeadm#:~:text=work%20correctly%2C%20its-,cgroup%20driver,-needs%20to%20match) needs to match the one used by Docker.
+For the ```kubelet``` process to work correctly, its 
+<a href="https://kubernetes.io/docs/setup/production-environment/container-runtimes/">cgroup driver</a> needs to match the one used by Docker.
+
+
 
 To do this, you can adjust the Docker configuration using the following command on each node:
 ```
@@ -120,12 +125,13 @@ cat <<EOF | sudo tee /etc/docker/daemon.json
 }
 EOF
 ```
-For more details, see [configuring a cgroup driver.](https://www.containiq.com/post/kubeadm#:~:text=configuring%20a%20cgroup%20driver)
-
-Once you’ve adjusted the configuration on each node, restart the Docker service and its corresponding daemon.
+For more details, see <a href="https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/configure-cgroup-driver/">configuring a cgroup driver</a> Once you’ve adjusted the configuration on each node, restart the Docker service and its corresponding daemon.
 ```
 sudo systemctl daemon-reload && sudo systemctl restart docker
 ```
+
+
+
 
 
 #### 6. install ```kubeadm```, ```kubelet```, and ```kubectl``` on each node
