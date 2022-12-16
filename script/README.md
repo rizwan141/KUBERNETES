@@ -12,7 +12,7 @@ bash <(curl -s https://raw.githubusercontent.com/rizwan141/KUBERNETES/main/scrip
 sudo -i
 ```
 ```
-bash <(curl -s https://raw.githubusercontent.com/rizwan141/KUBERNETES/main/cluster-setup/worker.sh)
+bash <(curl -s https://raw.githubusercontent.com/rizwan141/KUBERNETES/main/script/cluster-setup/worker.sh)
 ```
 
 ##  run the printed kubeadm-join-command from the master on the worker
