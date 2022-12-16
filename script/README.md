@@ -4,7 +4,7 @@
 sudo -i
 ```
 ```
-bash <(curl -s https://raw.githubusercontent.com/rizwan141/KUBERNETES/main/cluster-setup/master.sh)
+bash <(curl -s https://raw.githubusercontent.com/rizwan141/KUBERNETES/main/script/cluster-setup/master.sh)
 ```
 
 ##  worker
