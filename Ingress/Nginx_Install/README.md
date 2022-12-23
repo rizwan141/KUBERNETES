@@ -1,6 +1,6 @@
 # Install NGINX Ingress Controller 
 ```
-kubectl apply -f https://raw.githubusercontent.com/rizwan141/kubeadm-env/main/Ingress/Local_Testing/nginx-ingress-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/rizwan141/KUBERNETES/main/Ingress/Nginx_Install/nginx-ingress-controller.yaml
 ```
 ```
 # check ingress controller pod and svc
