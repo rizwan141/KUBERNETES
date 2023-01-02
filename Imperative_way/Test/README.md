@@ -8,5 +8,6 @@
 # Create a new pod called custom-nginx using the nginx image and expose it on container port 8080.
 # Create a new namespace called dev-ns.
 # Create a new deployment called redis-deploy in the dev-ns namespace with the redis image. It should have 2 replicas.
-# Create a pod called httpd using the image httpd:alpine in the default namespace.
+# Create a pod called httpd using the image httpd:alpine in the default namespace. Next, create a service of type ClusterIP by the same name (httpd).
+The target port for the service should be 80.
 ```
