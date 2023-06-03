@@ -137,22 +137,24 @@ sudo systemctl daemon-reload && sudo systemctl restart docker
 #### 6. install ```kubeadm```, ```kubelet```, and ```kubectl``` on each node
 ##### Installing kubeadm, kubelet, and kubectl
 Start by installing the following dependency required by Kubernetes on each node:
+
 ```
-sudo apt install apt-transport-https
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl
 ```
 Download the Google Cloud public signing key:
 ```
-sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
 ```
 Add the Kubernetes ```apt``` repository using the following command:
 ```
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ```
 Update the ```apt``` package index and install ```kubeadm```, ```kubelet```, and ```kubectl``` on each node by running the following command:
 ```
-sudo apt update \
-&& sudo apt install -y kubelet kubeadm kubectl \
-&& sudo apt-mark hold kubelet kubeadm kubectl
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
 ```
 The last line with the ```apt-mark hold``` command is optional, but highly recommended. This will prevent these packages from being updated until you unhold them using the command:
 ```
