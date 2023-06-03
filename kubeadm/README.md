@@ -333,9 +333,11 @@ ip-172-31-9-67    NotReady   <none>          2m52s   v1.24.0
 
 #### 12. Install a Network Plugin
 
-Install flannel
+##### Doc Ref : <a href="https://kubernetes.io/docs/concepts/cluster-administration/addons/">Installing Network Plugin Addons</a>
+
+Install Weave Net : <a href="https://www.weave.works/docs/net/latest/kubernetes/kube-addon/">Weave Net</a>
 ```
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 ```
 Wait 30 seconds or so, then run ```kubectl get nodes``` Nodes should now be ready
 ```
