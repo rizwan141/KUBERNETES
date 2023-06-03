@@ -332,11 +332,6 @@ ip-172-31-9-67    NotReady   <none>          2m52s   v1.24.0
 ##### Note that both nodes are NotReady. This is OK because we have not yet installed networking.
 
 #### 12. Install a Network Plugin
-To install Calico, use the following command:
-```
-kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
-```
-OR 
 
 Install flannel
 ```
