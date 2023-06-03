@@ -162,7 +162,7 @@ sudo apt-mark unhold kubelet kubeadm kubectl
 ```
 ##### NOTE : In production environments, it’s common to deploy a specific version of Kubernetes that has already been tested instead of the most recent one. For example, to install version 1.23.1, you can use the following command:
 ```
-sudo apt install -y kubelet=1.23.1-00 kubectl=1.23.1-00 kubeadm=1.23.1-00
+sudo apt install -y kubelet=1.23.1-00 kubectl=1.23.1-00 kubeadm=1.23.1-00 --allow-downgrades
 ```
 
 #### 7. Check the version of kubeadm, kubelet & kubectl installed
