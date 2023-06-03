@@ -77,6 +77,7 @@ Once the changes have been saved,```CTRL O ENTRE, CTRL X``` or use ```vi/vim``` 
 sudo reboot
 ```
 #### 4. Installing Docker Engine on both nodes 
+#### Doc Ref : <a href="https://docs.docker.com/engine/install/ubuntu/">Installing Docker</a>
 
 Start by installing the following packages on each node:
 ```
