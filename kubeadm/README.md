@@ -9,9 +9,9 @@
 3. Setting Up Unique Hostnames
 4. Install Docker container runtime on both Nodes
 5. Install kubeadm, kubelet and kubectl on both Nodes
+6. ports requirement 
 
-
-
+<img width="755" alt="Screenshot 2023-06-04 at 11 38 34 AM" src="https://github.com/rizwan141/KUBERNETES/assets/103893307/67d85c00-4579-42b6-8368-6f411b53febf">
 
 ### Steps :
 #### 1. Take 2 VM : Controlplane & Workernode
