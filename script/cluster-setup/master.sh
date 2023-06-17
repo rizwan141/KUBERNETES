@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Source: http://kubernetes.io/docs/getting-started-guides/kubeadm
-
-
 KUBE_VERSION=1.26.1
 
 
