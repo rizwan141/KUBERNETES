@@ -2,7 +2,7 @@
 
 #### DaemonSets are like replicasets, as it helps in to deploy multiple instances of pod. But it runs one copy of your pod on each node in your cluster.
   
-## DaemonSets - Definition
+## DaemonSets - manifest file 
 - Creating a DaemonSet is similar to the ReplicaSet creation process.
 - For DaemonSets, we start with apiVersion, kind as **`DaemonSets`** instead of **`ReplicaSet`**, metadata and spec. 
   ```
@@ -49,7 +49,7 @@
 
 - To create a daemonset from a definition file
   ```
-  $ kubectl create -f daemon-set-definition.yaml
+  $ kubectl create -f <filename>
   ```
 
 ## View DaemonSets
