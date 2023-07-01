@@ -6,7 +6,7 @@ aws ec2 create-volume \
 ```
 
 ### pv.yaml
-```
+```yml
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -22,7 +22,7 @@ spec:
 ```
 
 ### pvc.yaml
-```
+```yml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -38,7 +38,7 @@ spec:
 
 
 ### pod.yaml
-```
+```yml
 kind: Pod
 metadata:
   name: mypod
