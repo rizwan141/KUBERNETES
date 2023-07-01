@@ -40,16 +40,20 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: test-pod
+  name: nginx
 spec:
   containers:
-    - name: myfrontend
-      image: nginx
-      volumeMounts:
-      - mountPath: "/var/www/html"
-        name: test
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+    command: ["/bin/sh", "-c"]
+    args: ["while true; do shuf -i 0-100 -n 1 >> /opt/number.out; sleep 1; done"]
+    volumeMounts:
+    - mountPath: /opt
+      name: data-volume
   volumes:
-    - name: test
-      persistentVolumeClaim:
+  - name: data-volume
+    persistentVolumeClaim:
         claimName: test-pvc
 ```
