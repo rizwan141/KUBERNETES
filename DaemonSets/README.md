@@ -45,7 +45,7 @@ spec:
       spec:
         containers:
         - name: monitoring-agent
-          image: monitoring-agent
+          image: nginx
   ```
 
 - To create a daemonset from a definition file
