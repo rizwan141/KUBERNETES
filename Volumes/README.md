@@ -130,6 +130,30 @@ $ kubectl delete pvc test-pvc
 - https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#persistentvolumeclaim-v1-core
 - https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingpersistentvolumeclaim.htm
 
+### Access Modes
+
+In Kubernetes, access modes define the different ways in which a Persistent Volume (PV) or Persistent Volume Claim (PVC) can be accessed by pods. The access mode is specified when creating a PV or PVC, and it determines the level of access and concurrency allowed. The following are the three commonly used access modes:
+
+1. ReadWriteOnce (RWO): This mode allows the volume to be mounted as read-write by a single node in the cluster. It means that the volume can be mounted by only one pod for read and write operations. This is typically used for scenarios where the data needs to be accessed and modified by a single pod at a time.
+
+2. ReadOnlyMany (ROX): This mode allows the volume to be mounted as read-only by multiple nodes in the cluster. It means that multiple pods can simultaneously mount the volume, but they can only read from it and cannot write to it. This mode is suitable for scenarios where the data is read-only and needs to be shared across multiple pods.
+
+3. ReadWriteMany (RWX): This mode allows the volume to be mounted as read-write by multiple nodes in the cluster. It means that multiple pods can simultaneously mount the volume and both read from and write to it. This mode is useful for scenarios where multiple pods need read-write access to the same volume, such as shared file systems.
+
+It's important to note that not all storage providers support all access modes. The supported access modes depend on the underlying storage system and its capabilities. When creating a PV or PVC, you should consult the documentation of your specific storage provider to determine which access modes are supported.
+
+When a PVC is created, it requests a specific access mode, and the PVC will only bind to a PV that supports the requested access mode. If a suitable PV is not available with the requested access mode, the PVC will remain in a pending state until a compatible PV becomes available.
+
+`ReadOnlyMany (ROX)`
+In this mode multiple pods running on different Nodes could connect to the storage and carry out read operation.
+
+`ReadWriteMany (RWX)`
+In this mode multiple pods running on different Nodes could connect to the storage and carry out read and write operation.
+
+`ReadWriteOnce (RWO)`
+In this mode multiple pods running in only one Node could connect to the storage and carry out read and write operation.
+
+#### Docs : https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
 
 # yamls 
 
