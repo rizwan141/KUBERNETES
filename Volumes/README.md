@@ -7,18 +7,16 @@ aws ec2 create-volume \
 
 ### pv.yaml
 ```yml
-apiVersion: v1
 kind: PersistentVolume
+apiVersion: v1
 metadata:
-  name: ebs-pv
+    name: test-pv
 spec:
-  capacity:
-    storage: 5Gi
-  accessModes:
-    - ReadWriteOnce
-  awsElasticBlockStore:
-    volumeID: vol-0b1e12b69debd165d
-    fsType: ext4
+    accessModes: [ "ReadWriteOnce" ]
+    capacity:
+     storage: 5Gi
+    hostPath:
+     path: /tmp/data
 ```
 
 ### pvc.yaml
@@ -26,7 +24,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: ebs-pvc
+  name: test-pvc
 spec:
   accessModes:
     - ReadWriteOnce
