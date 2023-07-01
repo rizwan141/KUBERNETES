@@ -2,7 +2,7 @@
 
 #### DaemonSets are like replicasets, as it helps in to deploy multiple instances of pod. But it runs one copy of your pod on each node in your cluster.
   
-## DaemonSets - manifest file 
+## DaemonSets VS Replicasets - manifest file
 
   ```yml
 apiVersion: apps/v1
