@@ -8,7 +8,7 @@ metadata:
 spec:
     accessModes: [ "ReadWriteOnce" ]
     capacity:
-     storage: 5Gi
+     storage: 1Gi
     hostPath:
      path: /tmp/data
 ```
