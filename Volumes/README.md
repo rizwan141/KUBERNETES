@@ -4,7 +4,9 @@
 
 In this session, we will take a look at **Volumes**
 
-- When a POD is created to process data and then deleted, the data processed by it gets deleted as well. 
+- If we don't attach the volume in the container runtime, when container destroyed and then all data will be lost. So, We need to persist data into the container so we attach a volume to the containers when they are created.
+- The data are processed by the container is now placed in this volume thereby retaining it permanently. Even if the container is deleted the data remains in the volume.
+- In the Kubernetes world, the PODs created in Kubernetes are transient in nature. When a POD is created to process data and then deleted, the data processed by it gets deleted as well. 
 - For example, We create a simple POD that generated a random between 1 and 100 and writes that to a file at `/opt/number.out`. To persist into the volume.
 - We create a volume for that. In this case I specify a path `/data` on the host. Files are stored in the directory data on my node. We use the volumeMounts field in each container to mount the data-volume to the directory `/opt` within the container. The random number will now be written to `/opt` mount inside the container, which happens to be on the data-volume which is in fact `/data` directory on the host. When the pod gets deleted, the file with the random number still lives on the host.
 
