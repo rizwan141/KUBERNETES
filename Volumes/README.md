@@ -39,6 +39,7 @@ spec:
 
 ### pod.yaml
 ```yml
+apiVersion: v1
 kind: Pod
 metadata:
   name: mypod
