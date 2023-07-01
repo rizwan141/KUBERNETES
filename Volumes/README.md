@@ -81,6 +81,59 @@ volumes:
 - https://portworx.com/tutorial-kubernetes-persistent-volumes/
 
 
+# Persistent Volume Claims
+
+- Now we will create a Persistent Volume Claim to make the storage available to the node.
+- Volumes and Persistent Volume Claim are two separate objects in the Kubernetes namespace.
+- Once the Persistent Volume Claim created, Kubernetes binds the Persistent Volumes to claim based on the request and properties set on the volume.
+
+
+- If properties not matches or Persistent Volume is not available for the Persistent Volume Claim then it will display the pending state.
+
+```yml
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: test-pvc
+spec:
+  accessModes: [ "ReadWriteOnce" ]
+  resources:
+   requests:
+     storage: 1Gi
+```
+
+
+#### Create the Persistent Volume Claim
+
+```
+$ kubectl create -f pvc-definition.yaml
+persistentvolumeclaim/test-pvc created
+
+$ kubectl get pvc
+NAME      STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+test-pvc   Pending                                                     35s
+
+$ kubectl get pvc
+NAME      STATUS   VOLUME    CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+myclaim   Bound    pv-vol1   1Gi        RWO                           1min
+
+```
+
+#### Delete the Persistent Volume Claim
+
+```
+$ kubectl delete pvc test-pvc
+```
+
+#### Kubernetes Persistent Volume Claims Reference Docs
+
+- https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
+- https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#persistentvolumeclaim-v1-core
+- https://docs.cloud.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingpersistentvolumeclaim.htm
+
+
+# yamls 
 
 
 ### pv.yaml
