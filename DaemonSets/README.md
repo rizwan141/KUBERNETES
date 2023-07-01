@@ -3,30 +3,31 @@
 #### DaemonSets are like replicasets, as it helps in to deploy multiple instances of pod. But it runs one copy of your pod on each node in your cluster.
   
 ## DaemonSets - manifest file 
-- Creating a DaemonSet is similar to the ReplicaSet creation process.
-- For DaemonSets, we start with apiVersion, kind as **`DaemonSets`** instead of **`ReplicaSet`**, metadata and spec. 
-  ```
-  apiVersion: apps/v1
-  kind: Replicaset
-  metadata:
-    name: monitoring-daemon
-    labels:
-      app: nginx
-  spec:
-    selector:
-      matchLabels:
-        app: monitoring-agent
-    template:
-      metadata:
-       labels:
-         app: monitoring-agent
-      spec:
-        containers:
-        - name: monitoring-agent
-          image: monitoring-agent
+
+  ```yml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: demo-rs
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata: # Dictionary
+      name: demo-pod
+      labels: # Dictionary
+        app: demo-app
+    spec: # Dictionary
+      containers: # List
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
   ```
   
-  ```
+  ```yml
   apiVersion: apps/v1
   kind: DaemonSet
   metadata:
