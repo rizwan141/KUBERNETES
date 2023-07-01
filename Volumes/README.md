@@ -40,16 +40,16 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mypod
+  name: test-pod
 spec:
   containers:
     - name: myfrontend
       image: nginx
       volumeMounts:
       - mountPath: "/var/www/html"
-        name: mypd
+        name: test
   volumes:
-    - name: mypd
+    - name: test
       persistentVolumeClaim:
-        claimName: ebs-pvc
+        claimName: test-pvc
 ```
