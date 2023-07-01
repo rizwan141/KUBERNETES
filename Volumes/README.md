@@ -1,7 +1,5 @@
 # Volumes
 
-  
-
 In this session, we will take a look at **Volumes**
 
 - If we don't attach the volume in the container runtime, when container destroyed and then all data will be lost. So, We need to persist data into the container so we attach a volume to the containers when they are created.
@@ -24,8 +22,6 @@ In this session, we will take a look at **Volumes**
 
 
 
-
-
 ```
 volumes:
 - name: data-volume
@@ -42,6 +38,47 @@ volumes:
 - https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#volume-v1-core
 
 
+# Persistent Volumes
+
+
+- In the large evnironment, with a lot of users deploying a lot of pods, the users would have to configure storage every time for each Pod.
+- Whatever storage solution is used, the users who deploys the pods would have to configure that on all pod definition files in his environment. Every time a change is to be made, the user would have to make them on all of his pods.
+
+
+
+
+- A Persistent Volume is a cluster-wide pool of storage volumes configured by an administrator to be used by users deploying application on the cluster. The users can now select storage from this pool using Persistent Volume Claims.
+
+  ```yml
+  
+  kind: PersistentVolume
+  apiVersion: v1
+  metadata:
+    name: pv-test
+  spec:
+    accessModes: [ "ReadWriteOnce" ]
+    capacity:
+     storage: 1Gi
+    hostPath:
+     path: /tmp/data
+  ```
+
+  ```
+  $ kubectl create -f pv-definition.yaml
+  persistentvolume/pv-test created
+
+  $ kubectl get pv
+  NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+  pv-test   1Gi        RWO            Retain           Available                                   3min
+  
+  $ kubectl delete pv pv-test
+  persistentvolume "pv-test" deleted
+  ```
+
+#### Kubernetes Persistent Volumes
+
+- https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+- https://portworx.com/tutorial-kubernetes-persistent-volumes/
 
 
 
