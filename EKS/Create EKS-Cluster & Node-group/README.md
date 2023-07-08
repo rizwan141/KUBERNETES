@@ -13,7 +13,7 @@ eksctl create cluster --name=eksdemo \
 
 #### Get List of clusters
 ```
-eksctl get cluster                  
+eksctl get cluster --region us-east-1                 
 ```
 <img width="1110" alt="Screenshot 2022-12-23 at 6 30 00 AM" src="https://user-images.githubusercontent.com/103893307/209253091-87c5fa4b-cca4-40a4-8f46-d1a7d24bdd66.png">
 
