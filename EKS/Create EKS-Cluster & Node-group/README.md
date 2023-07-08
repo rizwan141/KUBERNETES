@@ -87,7 +87,7 @@ eksctl create nodegroup --cluster=eksdemo \
 eksctl get cluster
 
 # List NodeGroups in a cluster
-eksctl get nodegroup --cluster=<clusterName>
+eksctl get nodegroup --cluster=<clusterName> --region us-east-1
 
 # List Nodes in current kubernetes cluster
 kubectl get nodes -o wide
