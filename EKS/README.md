@@ -3,7 +3,18 @@
 ```
 eksctl create cluster --name demo-cluster --version 1.23 --region us-east-1 --nodegroup-name demo-ng --node-type t3.medium --nodes 2 --managed
 ```
-
+### Create & Associate IAM OIDC Provider for our EKS Cluster
+- To enable and use AWS IAM roles for Kubernetes service accounts on our EKS cluster, we must create &  associate OIDC identity provider.
+- To do so using `eksctl` we can use the  below command. 
+- Use latest eksctl version (as on today the latest version is `0.123.0`)              
+#### Template
+```
+eksctl utils associate-iam-oidc-provider \
+    --region region-code \
+    --cluster <cluter-name> \
+    --approve
+```
+#### Replace with region & cluster name
 
 ```
 eksctl utils associate-iam-oidc-provider \
@@ -91,7 +102,7 @@ kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h 
 mysql> show schemas;
 ```
 
-# MySQL CMD 
+# MySQL Commands 
 
 Here are some common MySQL database commands with examples:
 
