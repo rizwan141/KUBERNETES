@@ -11,3 +11,9 @@ eksctl utils associate-iam-oidc-provider \
     --cluster demo-cluster \
     --approve
 ```
+
+# Install-EBS-CSI-Driver
+https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html 
+
+
+https://docs.aws.amazon.com/eks/latest/userguide/managing-ebs-csi.html
