@@ -30,7 +30,7 @@ https://docs.aws.amazon.com/eks/latest/userguide/managing-ebs-csi.html
 
 # EKS Storage -  Storage Classes, Persistent Volume Claims
 
-## Step-01: Introduction
+## Introduction
 - We are going to create a MySQL Database with persistence storage using AWS EBS Volumes
 
 | Kubernetes Object  | YAML File |
@@ -41,7 +41,7 @@ https://docs.aws.amazon.com/eks/latest/userguide/managing-ebs-csi.html
 | Deployment, Environment Variables, Volumes, VolumeMounts  | mysql-deployment.yml  |
 | ClusterIP Service  | mysql-clusterip-service.yml  |
 
-## Step-02: Create following Kubernetes manifests
+## Create following Kubernetes manifests
 ### Create Storage Class manifest
 - https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode
 - **Important Note:** `WaitForFirstConsumer` mode will delay the volume binding and provisioning  of a PersistentVolume until a Pod using the PersistentVolumeClaim is created. 
@@ -71,7 +71,7 @@ kubectl get pv
 ### Create MySQL ClusterIP Service manifest
 - At any point of time we are going to have only one mysql pod in this design so `ClusterIP: None` will use the `Pod IP Address` instead of creating or allocating a separate IP for `MySQL Cluster IP service`.   
 
-## Step-03: Create MySQL Database with all above manifests
+## Create MySQL Database with all above manifests
 ```
 # Create MySQL Database
 kubectl apply -f kube-manifests/
@@ -92,7 +92,7 @@ kubectl get pods
 kubectl get pods -l app=mysql
 ```
 
-## Step-04: Connect to MySQL Database
+## Connect to MySQL Database
 ```
 # Connect to MYSQL Database
 kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql -pdbpassword11
