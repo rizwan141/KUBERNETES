@@ -91,12 +91,71 @@ kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h 
 mysql> show schemas;
 ```
 
-## Step-05: References
-- We need to discuss references exclusively here. 
-- These will help you in writing effective templates based on need in your environments. 
-- Few features are still in alpha stage as on today (Example:Resizing), but once they reach beta you can start leveraging those templates and make your trials. 
-- **EBS CSI Driver:** https://github.com/kubernetes-sigs/aws-ebs-csi-driver
-- **EBS CSI Driver Dynamic Provisioning:**  https://github.com/kubernetes-sigs/aws-ebs-csi-driver/tree/master/examples/kubernetes/dynamic-provisioning
-- **EBS CSI Driver - Other Examples like Resizing, Snapshot etc:** https://github.com/kubernetes-sigs/aws-ebs-csi-driver/tree/master/examples/kubernetes
-- **k8s API Reference Doc:** https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#storageclass-v1-storage-k8s-io
+# MySQL CMD 
 
+Here are some common MySQL database commands with examples:
+
+1. Connect to MySQL server:
+```shell
+kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql -pdbpassword11
+```
+
+2. Create a new database:
+```sql
+CREATE DATABASE mydatabase;
+```
+Creates a new database named `mydatabase`.
+
+3. Show existing databases:
+```sql
+SHOW DATABASES;
+```
+Lists all the databases available on the MySQL server.
+
+4. Use a specific database:
+```sql
+USE mydatabase;
+```
+Switches to the `mydatabase` database for executing subsequent commands.
+
+5. Create a new table:
+```sql
+CREATE TABLE mytable (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50),
+  age INT
+);
+```
+Creates a new table named `mytable` with columns `id`, `name`, and `age`.
+
+6. Insert data into a table:
+```sql
+INSERT INTO mytable (name, age) VALUES ('John', 25);
+```
+Inserts a new row with name `John` and age `25` into the `mytable` table.
+
+7. Select data from a table:
+```sql
+SELECT * FROM mytable;
+```
+Retrieves all rows and columns from the `mytable` table.
+
+8. Update data in a table:
+```sql
+UPDATE mytable SET age = 30 WHERE name = 'John';
+```
+Updates the `age` to `30` for the row with name `John` in the `mytable` table.
+
+9. Delete data from a table:
+```sql
+DELETE FROM mytable WHERE name = 'John';
+```
+Deletes the row with name `John` from the `mytable` table.
+
+10. Drop a table:
+```sql
+DROP TABLE mytable;
+```
+Removes the `mytable` table from the database.
+
+### Note : These are just a few examples of commonly used MySQL database commands. There are many more commands and features available in MySQL for managing databases, tables, and data.
