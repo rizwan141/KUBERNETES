@@ -59,6 +59,8 @@ Description: Updates the local cache of available charts from the configured rep
 Example: `helm repo update`
 
 
+
+
 ### Example
 
 ```
@@ -88,5 +90,26 @@ helm pull --untar bitnami/nginx
 helm upgrade nginx bitnami/nginx --version 14.2.2
 ```
 
+
+**helm history eg :**
+
+Description: View the release history of a deployed chart.
+
+Example: `helm history my-release`
+
+Output:
+
+```perl
+REVISION 	UPDATED                 	STATUS    	CHART       	APP VERSION   	DESCRIPTION
+1        	Tue Aug 10 15:23:42 2023	DEPLOYED  	my-chart-1.0.0	1.2.3         	Initial install
+2        	Tue Aug 12 09:17:58 2023	UPGRADED  	my-chart-1.1.0	2.0.0         	Upgrade to version 1.1.0
+```
+
+
+
+## Helm Cheat Sheet
+
+
+![Helm-cheat-sheet-by-PhoenixNAP_page-0001](https://github.com/rizwan141/KUBERNETES/assets/103893307/f018d164-73c3-4e80-a4dc-c80f9c0ba73c)
 
 
