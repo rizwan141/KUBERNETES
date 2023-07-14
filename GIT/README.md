@@ -145,3 +145,6 @@ git merge feature # now code is finalized so we can merged into main/master so t
 git pull origin master # to pull the latest code on your local
 ```
 
+
+### [Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)
+
