@@ -43,17 +43,24 @@ GitHub is one place where project managers and developers coordinate, track, and
 `Staging area (Index)` - Stage the files and add snapshots of them to your staging area \
 `Git directory (Repository)` - Perform a commit that stores the snapshots permanently to your Git directory
 
-## Install Git
+### Install Git
 ```
 sudo apt update
 sudo apt install git
 git --version
 ```
 
+#### Set up global config variables - If you are working with other developers, you need to know who is checking the code in and out, and to make the changes.
+```
+git config --global user.name "Rizwan Shaikh"
 
+git config --global user.email rizwanshaikh123@gmail.com
+
+git config –list
+```
 ## Demo
 
-### munna wants to create code on his local 
+### developer-1  wants to create code on his local 
 
 ```sql
 mkdir git-demo # create directory
@@ -114,7 +121,7 @@ git stash clear # if you dont want those files
 
 ```
 
-### munna Want to share his project to others ?
+### developer-1  Wants to share his project to others ?
 
 ```sql
 create a repo on github
@@ -123,7 +130,7 @@ how many urls attached to your project -----> git remote -v
 push the changes in repo  ----->  git push origin master
 ```
 
-### munna will use Branching Strategy
+### developer-1  will use Branching Strategy
 
 - munna can not push code directly on main/master branch
 - coz code is not finalized yet
