@@ -134,6 +134,9 @@ push the changes in repo  ----->  git push origin master
 
 ![155993572204-gitflow](https://github.com/rizwan141/KUBERNETES/assets/103893307/399b9105-898b-41e0-8960-b3544c2a4286)
 
+
+Branches are primarily used as a means for teams to develop features giving them a separate workspace for their code. These branches are usually merged back to a master branch upon completion of work. In this way, features (and any bug and bug fixes) are kept apart from each other allowing you to fix mistakes more easily.
+
 - developer-1 can not push code directly on main/master branch
 - coz code is not finalized yet
 - along with developer-1 there are some other developers as well whoes are going to contribute to this project
