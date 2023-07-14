@@ -10,7 +10,7 @@ git --version
 
 ## Demo
 
-### lets create code on local 
+### munna wants to create code on his local 
 
 ```sql
 mkdir git-demo # create directory
@@ -71,10 +71,23 @@ git stash clear # if you dont want those files
 
 ```
 
-### Want to share your project to others ?
+### munna Want to share his project to others ?
 
 ```sql
 create a repo on github
-attached newly created repo to your project ---> git remote add origin <repo url>
-all urls attached to your project -----> git remote -v
+attached newly created repo to your project ---> git remote add origin <repo url> i.e local and repo is connected with each other 
+how many urls attached to your project -----> git remote -v
+push the changes in repo  ----->  git push origin master
+```
+
+### munna will use Branching Strategy
+
+- munna can not push code directly on main/master branch
+- coz code is not finalized yet
+- along with munna there are some other developers as well whoes are going to contribute to this project
+
+```sql
+git branch feature # create new branch feature
+git checkout feature # change branch to feature
+git merge feature # now code is finalized so we can merged into main/master so that other people can use the same
 
