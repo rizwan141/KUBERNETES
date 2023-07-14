@@ -132,9 +132,11 @@ push the changes in repo  ----->  git push origin master
 
 ### developer-1  will use Branching Strategy
 
-- munna can not push code directly on main/master branch
+![155993572204-gitflow](https://github.com/rizwan141/KUBERNETES/assets/103893307/399b9105-898b-41e0-8960-b3544c2a4286)
+
+- developer-1 can not push code directly on main/master branch
 - coz code is not finalized yet
-- along with munna there are some other developers as well whoes are going to contribute to this project
+- along with developer-1 there are some other developers as well whoes are going to contribute to this project
 
 ```sql
 git branch feature # create new branch feature
