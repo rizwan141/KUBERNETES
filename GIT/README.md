@@ -2,6 +2,8 @@
 
 Git is an open-source distributed version control system. It is designed to handle minor to major projects with high speed and efficiency. It is developed to co-ordinate the work among the developers. The version control allows us to track and work together with our team members at the same workspace.
 
+<img width="588" alt="Screenshot 2023-07-14 at 5 42 37 PM" src="https://github.com/rizwan141/KUBERNETES/assets/103893307/7802986b-2214-424b-b612-9e92e558c5c1">
+
 
 ## Install Git
 ```
