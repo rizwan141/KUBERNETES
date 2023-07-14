@@ -90,4 +90,6 @@ push the changes in repo  ----->  git push origin master
 git branch feature # create new branch feature
 git checkout feature # change branch to feature
 git merge feature # now code is finalized so we can merged into main/master so that other people can use the same
+git pull origin master # to pull the latest code on your local
+```
 
