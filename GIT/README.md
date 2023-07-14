@@ -35,6 +35,14 @@ GitHub is a Git repository hosting service that provides a web-based graphical i
 GitHub is one place where project managers and developers coordinate, track, and update their work,
 
 
+## Git Workflow
+
+### The Git workflow is divided into three states:
+
+`Working directory` - Modify files in your working directory \
+`Staging area (Index)` - Stage the files and add snapshots of them to your staging area \
+`Git directory (Repository)` - Perform a commit that stores the snapshots permanently to your Git directory
+
 ## Install Git
 ```
 sudo apt update
