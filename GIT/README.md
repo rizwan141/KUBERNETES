@@ -137,6 +137,16 @@ push the changes in repo  ----->  git push origin master
 
 Branches are primarily used as a means for teams to develop features giving them a separate workspace for their code. These branches are usually merged back to a master branch upon completion of work. In this way, features (and any bug and bug fixes) are kept apart from each other allowing you to fix mistakes more easily.
 
+Branching is one of the most useful concepts of Git world. Developers create a lot of branches like:
+
+Example :~
+
+**master or main:** The master or main branch is by default branch provided by Git. \
+**development:** The development branch is created by developers for the development process. \
+**testing:** The testing or test branch is created by the developer to perform testing-related operations. \
+**feature:** The feature branch is created by the developers to add new features to the ongoing project.
+
+
 - developer-1 can not push code directly on main/master branch
 - coz code is not finalized yet
 - along with developer-1 there are some other developers as well whoes are going to contribute to this project
