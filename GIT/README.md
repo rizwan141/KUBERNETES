@@ -1,15 +1,38 @@
+# Before Git:
+
+![business](https://github.com/rizwan141/KUBERNETES/assets/103893307/ef4d6940-dec4-4f49-a15f-a6f59a350fce)
+
+- Developers used to submit their codes to the central server without having copies of their own
+- Any changes made to the source code were unknown to the other developers
+- There was no communication between any of the developers
+
+# After Git:
+
+![business-org](https://github.com/rizwan141/KUBERNETES/assets/103893307/5ca81cb1-ed54-4d87-a04f-5a3643319edb)
+
+- Every developer has an entire copy of the code on their local systems
+- Any changes made to the source code can be tracked by others
+- There is regular communication between the developers
+
+
+
+
 # git
 
 Git is an open-source distributed version control system. It is designed to handle minor to major projects with high speed and efficiency. It is developed to co-ordinate the work among the developers. The version control allows us to track and work together with our team members at the same workspace.
 
 <img width="588" alt="Screenshot 2023-07-14 at 5 42 37 PM" src="https://github.com/rizwan141/KUBERNETES/assets/103893307/7802986b-2214-424b-b612-9e92e558c5c1">
 
+- Git is used to tracking changes in the source code
+- The distributed version control tool is used for source code management
+- It allows multiple developers to work together
+
+
 # github
 
 GitHub is a Git repository hosting service that provides a web-based graphical interface (GUI). It helps every team member work together on a project from anywhere, making it easy to collaborate. 
 
 GitHub is one place where project managers and developers coordinate, track, and update their work,
-
 
 
 ## Install Git
