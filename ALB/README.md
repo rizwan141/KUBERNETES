@@ -5,6 +5,8 @@
 - Using ingress, you can maintain the DNS routing configurations.
 - The ingress controller does the actual routing by reading the routing rules from ingress objects
 
+Kubernetes Ingress is an API object that provides routing rules to manage external users' access to the services in a Kubernetes cluster, typically via HTTPS/HTTP. With Ingress, you can easily set up rules for routing traffic without creating a bunch of Load Balancers or exposing each service on the node. This makes it the best option to use in production environments. 
+
 **Kubernetes Ingress Resource:** Kubernetes ingress resource is responsible for storing DNS routing rules in the cluster.
 
 **Kubernetes Ingress Controller:**  Kubernetes ingress controllers (Nginx/ALB etc.) are responsible for routing by accessing the DNS rules applied through ingress resources.
