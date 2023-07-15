@@ -1,3 +1,14 @@
+# Ingress
+
+- ingress refers to the act of entering.
+- It is the same in the Kubernetes world as well. Ingress means the traffic that enters the cluster
+- Using ingress, you can maintain the DNS routing configurations.
+- The ingress controller does the actual routing by reading the routing rules from ingress objects
+
+**Kubernetes Ingress Resource:** Kubernetes ingress resource is responsible for storing DNS routing rules in the cluster.
+
+**Kubernetes Ingress Controller:**  Kubernetes ingress controllers (Nginx/ALB etc.) are responsible for routing by accessing the DNS rules applied through ingress resources.
+
 # ALB as a Ingress Controller 
 ## Pre-requisites : 
 - **configure AWS_CLI**
