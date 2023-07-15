@@ -9,6 +9,9 @@
 
 **Kubernetes Ingress Controller:**  Kubernetes ingress controllers (Nginx/ALB etc.) are responsible for routing by accessing the DNS rules applied through ingress resources.
 
+<img width="761" alt="Screenshot 2023-07-16 at 12 34 07 AM" src="https://github.com/rizwan141/KUBERNETES/assets/103893307/5c1b2d7b-c8c4-4c93-914b-117a4adf7121">
+
+
 # ALB as a Ingress Controller 
 ## Pre-requisites : 
 - **configure AWS_CLI**
