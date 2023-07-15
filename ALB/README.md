@@ -1,5 +1,5 @@
 # ALB as a Ingress Controller 
-## Pre-requisites
+## Pre-requisites : 
 - **configure AWS_CLI**
 - **install eksctl & kubectl Command Line Utility**
 - **Create EKS Cluster and Worker Nodes (if not created)**
