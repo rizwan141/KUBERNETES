@@ -104,7 +104,12 @@ REVISION 	UPDATED                 	STATUS    	CHART       	APP VERSION   	DESCRI
 1        	Tue Aug 10 15:23:42 2023	DEPLOYED  	my-chart-1.0.0	1.2.3         	Initial install
 2        	Tue Aug 12 09:17:58 2023	UPGRADED  	my-chart-1.1.0	2.0.0         	Upgrade to version 1.1.0
 ```
-
+```
+helm repo add bitnami https://charts.bitnami.com/bitnami.
+helm search repo bitnami.
+helm search repo nginx.
+helm search repo bitnami/nginx.
+```
 
 
 ## Helm Cheat Sheet
