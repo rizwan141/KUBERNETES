@@ -11,6 +11,8 @@ steps :
 1. copy external ip address of worker node and use curl CMD (need to check connection from outside to the cluster through NP svc)
 ```
 curl http://<ip addr>:<http nodeport of controller>
+
+eg : curl http://54.172.43.254:31817
 ```
 we can see 404 error that means its not an connection error , we can able to connect nginx ingress
 
