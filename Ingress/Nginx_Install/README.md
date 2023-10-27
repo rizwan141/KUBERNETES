@@ -64,4 +64,6 @@ now repeat the curl command and pass newly created service
 ```
 curl http://<ip addr>:<http nodeport of controller>/service1
 curl http://<ip addr>:<http nodeport of controller>/service2
+
+eg : curl http://54.172.43.254:31817/service1
 ```
