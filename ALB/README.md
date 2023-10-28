@@ -11,7 +11,7 @@ Kubernetes Ingress is an API object that provides routing rules to manage extern
 
 **Kubernetes Ingress Controller:**  Kubernetes ingress controllers (Nginx/ALB etc.) are responsible for routing by accessing the DNS rules applied through ingress resources.
 
-<img width="761" alt="Screenshot 2023-07-16 at 12 34 07 AM" src="https://github.com/rizwan141/KUBERNETES/assets/103893307/5c1b2d7b-c8c4-4c93-914b-117a4adf7121">
+<img width="761" alt="253764432-5c1b2d7b-c8c4-4c93-914b-117a4adf7121" src="https://github.com/rizwan141/KUBERNETES/assets/103893307/f10ee017-fbbb-4e45-98ec-080036afae36">
 
 
 # ALB as a Ingress Controller 
