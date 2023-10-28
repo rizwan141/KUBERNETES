@@ -109,6 +109,12 @@ kubectl delete -f kube-manifests/
 # Uninstall AWS Load Balancer Controller
 helm uninstall aws-load-balancer-controller -n kube-system 
 
+# Delete nodegroup
+eksctl delete nodegroup eksdemo-ng --cluster eksdemo
+
+# Delete Cluster
+eksctl delete cluster --name eksdemo
+
 ## check all resources has been successfully deleted or not (EKS,VPC,CF_Stack,Hosted_Zone,Certificate....etc )
 ```
 
