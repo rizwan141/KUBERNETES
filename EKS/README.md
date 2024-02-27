@@ -2,6 +2,10 @@
 
 ```
 eksctl create cluster --name eksdemo --version 1.23 --region us-east-1 --nodegroup-name eksdemo-ng --node-type t3.medium --nodes 2 --managed
+
+or 
+eksctl create cluster --name eksdemo --version 1.29 --region ap-south-1 --nodegroup-name eksdemo-ng --node-type t3.medium --nodes 2 --managed
+
 ```
 ### Create & Associate IAM OIDC Provider for our EKS Cluster
 - To enable and use AWS IAM roles for Kubernetes service accounts on our EKS cluster, we must create &  associate OIDC identity provider.
